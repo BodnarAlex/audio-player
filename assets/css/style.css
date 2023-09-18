@@ -1,0 +1,34 @@
+*{border: 1px solid black;}
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 400px;
+    width: 300px;
+}
+
+#second_song{
+    display: none;
+}
+
+.container_item{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+
+}
+.photo{
+    height: 65%;
+}
+.controls{
+    height: 35%;
+}
