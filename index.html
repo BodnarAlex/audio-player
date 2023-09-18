@@ -14,18 +14,28 @@
         <div id="first_song" class="container_item">
             <div class="photo photo_one"></div>
             <div class="controls">
-                <div>
-                    <div class="play"></div>
+                <div class="controls_top">
+                    <div class="play">
+                        <img src="assets/svg/play.png" alt="play">
+                    </div>
                     <div class="song">
-                        <div>Beyonce</div>
+                        <div class="autor">Beyonce</div>
                         <div>Don't Hurt Yourself</div>
                     </div>
                     <div class="arrows">
-                        <div class="right"></div>
-                        <div class="left"></div>
+                        <div class="right">
+                            <img src="assets/svg/forward.png" alt="right">
+                        </div>
+                        <div class="left">
+                            <img src="assets/svg/backward.png" alt="left">
+                        </div>
                     </div>
                 </div>
-                <div class="audio"></div>
+                <div class="audio">
+                    <div class="start_song">0:00</div>
+                    <input type="range" value="0" min="0" max="100" step="1" class="progress">
+                    <div class="end_song">3:53</div>
+                </div>
             </div>
         </div>
         <div id="second_song" class="container_item">
@@ -42,7 +52,9 @@
                         <div class="left"></div>
                     </div>
                 </div>
-                <div class="audio"></div>
+                <div class="audio">
+                    <input type="range" value="40" min="0" max="100" step="1" class="progress">
+                </div>
             </div>
         </div>
     </div>
