@@ -1,4 +1,4 @@
-body{
+body {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -13,7 +13,7 @@ body{
     background-position: center center;
 }
 
-.container{
+.container {
     height: 400px;
     width: 300px;
     box-shadow: 0 0 10px #000000;
@@ -21,21 +21,23 @@ body{
     overflow: hidden;
 }
 
-#second_song{
+#second_song {
     display: none;
 }
 
-.container_item{
+.container_item {
     display: flex;
     width: 100%;
     height: 100%;
     border-radius: 10%;
     flex-flow: column nowrap;
 }
-.photo{
+
+.photo {
     height: 70%;
 }
-.controls{
+
+.controls {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -43,46 +45,52 @@ body{
     background: -webkit-linear-gradient(45deg, rgb(40, 40, 40), rgb(133, 133, 133));
     padding: 15px 30px 5px;
 }
-.photo_one{
+
+.photo_one {
     background-image: url(../img/lemonade.png);
     background-size: 100% 100%;
     background-position: center center;
 }
-.controls_top{
+
+.controls_top {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
 }
 
-.play{
+.play {
     height: 50px;
     width: 50px;
 }
 
 .play img,
-.arrows img{
+.arrows img {
     height: 100%;
     width: 100%;
     filter: invert(1);
 }
-.song{
+
+.song {
     color: white;
     font-size: 17px;
 }
-.song .autor{
+
+.song .autor {
     color: rgb(193, 255, 6);
     font-size: 20px;
 }
 
-.arrows{
+.arrows {
     display: flex;
     flex-flow: column nowrap;
 }
-.arrows div{
+
+.arrows div {
     width: 30px;
     height: 30px;
 }
-.audio{
+
+.audio {
     width: 80%;
     margin: 0 auto;
     color: white;
@@ -91,22 +99,25 @@ body{
     flex-flow: column-reverse;
     gap: 2px;
 }
-.audio .end_song{
+
+.audio .end_song {
     color: rgb(193, 255, 6);
     align-self: end;
 }
+
 .progress {
-    appearance: none; 
-	background-color:  black;
-	width: 100%;
-	height: 5px;
-	border-radius: 20px;
+    appearance: none;
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    border-radius: 20px;
 }
+
 input::-webkit-slider-thumb {
-    background-color:  rgb(193, 255, 6);
-    appearance: none; 
-	width: 8px;
-	height: 12px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+    background-color: rgb(193, 255, 6);
+    appearance: none;
+    width: 8px;
+    height: 12px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
