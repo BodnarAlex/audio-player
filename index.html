@@ -11,52 +11,34 @@
 
 <body>
     <div class="container">
-        <div id="first_song" class="container_item">
-            <div class="photo photo_one"></div>
+        <div class="container_item">
+            <div id="image_albom" class="photo photo_one"></div>
             <div class="controls">
                 <div class="controls_top">
                     <div class="play">
                         <img src="assets/svg/play.png" alt="play">
                     </div>
                     <div class="song">
-                        <div class="autor">Beyonce</div>
-                        <div>Don't Hurt Yourself</div>
+                        <div id="autor">Beyonce</div>
+                        <div id="title">Don't Hurt Yourself</div>
                     </div>
                     <div class="arrows">
-                        <div class="right">
+                        <div class="right" onclick="next()">
                             <img src="assets/svg/forward.png" alt="right">
                         </div>
-                        <div class="left">
+                        <div class="left" onclick="before()">
                             <img src="assets/svg/backward.png" alt="left">
                         </div>
                     </div>
                 </div>
                 <div class="audio">
-                    <div class="start_song">0:00</div>
+                    <div id="start_song">0:00</div>
                     <input type="range" value="0" min="0" max="100" step="1" class="progress">
-                    <div class="end_song">3:53</div>
+                    <div id="end_song">3:53</div>
                 </div>
             </div>
         </div>
-        <div id="second_song" class="container_item">
-            <div class="photo photo_one"></div>
-            <div class="controls">
-                <div>
-                    <div class="play"></div>
-                    <div class="song">
-                        <div>Dua Lipa</div>
-                        <div>Don't Start Now</div>
-                    </div>
-                    <div class="arrows">
-                        <div class="right"></div>
-                        <div class="left"></div>
-                    </div>
-                </div>
-                <div class="audio">
-                    <input type="range" value="40" min="0" max="100" step="1" class="progress">
-                </div>
-            </div>
-        </div>
+
     </div>
 </body>
 </html>
