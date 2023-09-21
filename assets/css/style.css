@@ -55,16 +55,21 @@ body {
     justify-content: space-between;
 }
 
-.play {
+.play, .stop {
     height: 50px;
     width: 50px;
 }
 
 .play img,
+.stop img,
 .arrows img {
     height: 100%;
     width: 100%;
     filter: invert(1);
+}
+
+.stop{
+    display: none;
 }
 
 .song {
