@@ -23,6 +23,12 @@ function newSong(count){
     document.getElementById("autor").textContent = songs[count].autor;
     document.body.style.backgroundImage = songs[count].url;
     document.getElementById("image_albom").style.backgroundImage = songs[count].url;
+
+    audio.onloadeddata = function(){
+        var durationSec =  audio.duration;
+        let duration = Math.trunc(durationSec / 60) + ':' + Math.floor(durationSec % 60);
+        document.getElementById("end_song").textContent = duration;
+    }
 }
 
 
