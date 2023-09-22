@@ -107,7 +107,7 @@ body {
     align-self: end;
 }
 
-.progress {
+#progress {
     appearance: none;
     background-color: black;
     width: 100%;

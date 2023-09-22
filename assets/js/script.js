@@ -41,12 +41,18 @@ function play(){
     document.getElementsByClassName("stop")[0].style.display = 'block';
 }
 
-
 function stop(){
     correctTimer = audio.currentTime;
     audio.pause();
     document.getElementsByClassName("stop")[0].style.display = 'none';
     document.getElementsByClassName("play")[0].style.display = 'block';
+}
+
+function otherTime(){
+    let needTimeInterest = document.getElementById("progress").value;
+    let needTime = getCorrectTimeformat(needTimeInterest * audio.duration / 500);
+    document.getElementById("start_song").textContent = needTime;
+    audio.currentTime = needTimeInterest * audio.duration / 500;
 }
 
 function getCorrectTimeformat(sec){
