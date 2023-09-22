@@ -8,6 +8,10 @@ let correctTimer = 0;
 const audio = new Audio();
 audio.src = songs[counter].song;
 
+audio.addEventListener('timeupdate',function (){
+    document.getElementById("start_song").textContent = getCorrectTimeformat(audio.currentTime);
+	});
+
 function next() {
     counter = (counter + 1) % songs.length;
     newSong(counter);
@@ -46,5 +50,7 @@ function stop(){
 }
 
 function getCorrectTimeformat(sec){
-    return Math.trunc(sec / 60) + ':' + Math.floor(sec % 60);
+    let secs = Math.floor(sec % 60); 
+    secs = secs > 9 ? secs : '0'+ secs;
+    return Math.trunc(sec / 60) + ':' +  secs;
 }
