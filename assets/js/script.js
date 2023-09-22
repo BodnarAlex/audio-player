@@ -10,7 +10,10 @@ audio.src = songs[counter].song;
 
 audio.addEventListener('timeupdate',function (){
     document.getElementById("start_song").textContent = getCorrectTimeformat(audio.currentTime);
-    document.getElementById("progress").value = audio.currentTime * 500 / audio.duration;
+    if (audio.currentTime == 0)
+        document.getElementById("progress").value = 0 ;
+    else
+        document.getElementById("progress").value = audio.currentTime * 500 / audio.duration;
 });
 
 audio.onloadeddata = function(){
@@ -35,7 +38,7 @@ function newSong(count){
     document.body.style.backgroundImage = songs[count].url;
     document.getElementById("image_albom").style.backgroundImage = songs[count].url;
     document.getElementsByClassName("stop")[0].style.display = 'none';
-    document.getElementsByClassName("play")[0].style.display = 'block'
+    document.getElementsByClassName("play")[0].style.display = 'block';
 }
 
 function play(){
