@@ -43,11 +43,13 @@ function newSong(count) {
 function play() {
     audio.play();
     toggleDifferentClass("stop", "play");
+    document.getElementById("image_albom").classList.toggle('scale');
 }
 
 function stop() {
     audio.pause();
     toggleDifferentClass("play", "stop");
+    document.getElementById("image_albom").classList.toggle('scale');
 }
 
 function otherTime() {
