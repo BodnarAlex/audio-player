@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     flex-flow: column nowrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: url(../img/lemonade.png) no-repeat;
     background-size: 100% 100%;
@@ -13,7 +13,7 @@ body {
     background-position: center center;
 }
 
-.container {
+main {
     height: 400px;
     width: 330px;
     box-shadow: 0 0 10px #000000;
@@ -61,22 +61,23 @@ body {
     justify-content: space-between;
 }
 
-.play,
-.stop {
+.play {
     height: 50px;
     width: 50px;
+    background-image: url("../svg/play.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    filter: invert(1);
 }
 
-.play img,
-.stop img,
+.play.stop{
+    background-image: url("../svg/pause.png");
+} 
+
 .arrows img {
     height: 100%;
     width: 100%;
     filter: invert(1);
-}
-
-.stop {
-    display: none;
 }
 
 .song {
@@ -129,4 +130,29 @@ input::-webkit-slider-thumb {
     height: 12px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
+}
+
+footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+.rsschool,
+.github{
+    width: 5rem;
+}  
+
+.image_github{
+    width: 3rem;
+    height: 3rem;
+    background-size: 100% 100%;
+    background-image: url("../svg/github.svg");
+}
+
+.rsschool,
+.image_github{
+    filter: invert(1);
 }

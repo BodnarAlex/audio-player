@@ -3,12 +3,14 @@ const songs = [
     { autor: "Dua Lipa", title: "Don't Start Now", url: "url(assets/img/dontstartnow.png)", song: 'assets/audio/assets_audio_dontstartnow.mp3' },
 ];
 
+let isPlay = false;
+
 let counter = 0;
-let correctTimer = 0;
 const audio = new Audio();
 audio.src = songs[counter].song;
 
 audio.addEventListener('timeupdate', function () {
+    console.log('timeupdate');
     document.getElementById("start_song").textContent = getCorrectTimeformat(audio.currentTime);
     if (audio.currentTime == 0)
         document.getElementById("progress").value = 0;
@@ -32,27 +34,29 @@ function before() {
 }
 
 function newSong(count) {
+    isPlay = false;
     audio.src = songs[counter].song;
     document.getElementById("title").textContent = songs[count].title;
     document.getElementById("autor").textContent = songs[count].autor;
     document.getElementById("image_albom").style.backgroundImage = songs[count].url;
     document.body.style.backgroundImage = songs[count].url;
-    toggleDifferentClass("play", "stop");
+    document.getElementsByClassName("play")[0].classList.remove('stop');
 }
 
-function play() {
-    audio.play();
-    toggleDifferentClass("stop", "play");
+function control() {
+    if (!isPlay) {
+        isPlay = true;
+        audio.play();
+    } else {
+        isPlay = false;
+        audio.pause();
+    }
     document.getElementById("image_albom").classList.toggle('scale');
-}
-
-function stop() {
-    audio.pause();
-    toggleDifferentClass("play", "stop");
-    document.getElementById("image_albom").classList.toggle('scale');
+    document.getElementsByClassName("play")[0].classList.toggle('stop');
 }
 
 function otherTime() {
+    console.log('otherTime');
     let needTimeInterest = document.getElementById("progress").value;
     let needTime = getCorrectTimeformat(needTimeInterest * audio.duration / 500);
     document.getElementById("start_song").textContent = needTime;
@@ -63,9 +67,4 @@ function getCorrectTimeformat(sec) {
     let secs = Math.floor(sec % 60);
     secs = secs > 9 ? secs : '0' + secs;
     return Math.trunc(sec / 60) + ':' + secs;
-}
-
-function toggleDifferentClass(visiable, none) {
-    document.getElementsByClassName(none)[0].style.display = 'none';
-    document.getElementsByClassName(visiable)[0].style.display = 'block';
 }
