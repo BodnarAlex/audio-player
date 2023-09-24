@@ -4,22 +4,23 @@ const songs = [
 ];
 
 let isPlay = false;
-
 let counter = 0;
 const audio = new Audio();
 audio.src = songs[counter].song;
 
 audio.addEventListener('timeupdate', function () {
-    console.log('timeupdate');
     document.getElementById("start_song").textContent = getCorrectTimeformat(audio.currentTime);
-    if (audio.currentTime == 0)
-        document.getElementById("progress").value = 0;
-    else
-        document.getElementById("progress").value = audio.currentTime * 500 / audio.duration;
-
-    if(audio.currentTime == audio.duration)
+    if (audio.currentTime == audio.duration)
         next();
-    });
+
+    console.log('false');
+    if (audio.currentTime != 0)
+        document.getElementById("progress").value = audio.currentTime * 1000 / audio.duration;
+    else
+        document.getElementById("progress").value = 0;
+
+}, false);
+
 
 audio.onloadeddata = function () {
     let duration = getCorrectTimeformat(audio.duration);
@@ -59,11 +60,9 @@ function control() {
 }
 
 function otherTime() {
-    console.log('otherTime');
-    let needTimeInterest = document.getElementById("progress").value;
-    let needTime = getCorrectTimeformat(needTimeInterest * audio.duration / 500);
-    document.getElementById("start_song").textContent = needTime;
-    audio.currentTime = needTimeInterest * audio.duration / 500;
+    let needTime = document.getElementById("progress").value * audio.duration / 1000;
+    audio.currentTime = needTime;
+    document.getElementById("start_song").textContent = getCorrectTimeformat(needTime);
 }
 
 function getCorrectTimeformat(sec) {
