@@ -16,7 +16,10 @@ audio.addEventListener('timeupdate', function () {
         document.getElementById("progress").value = 0;
     else
         document.getElementById("progress").value = audio.currentTime * 500 / audio.duration;
-});
+
+    if(audio.currentTime == audio.duration)
+        next();
+    });
 
 audio.onloadeddata = function () {
     let duration = getCorrectTimeformat(audio.duration);

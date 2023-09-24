@@ -75,11 +75,6 @@ main {
     background-image: url("../svg/pause.png");
 } 
 
-.play:hover,
-.arrows div:hover{
-    opacity: 0.75;
-}
-
 .arrows img {
     height: 100%;
     width: 100%;
@@ -163,4 +158,11 @@ footer{
 .rsschool,
 .image_github{
     filter: invert(1);
+}
+
+.play:hover,
+.arrows div:hover,
+.rsschool:hover,
+.image_github:hover{
+    opacity: 0.75;
 }
