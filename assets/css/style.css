@@ -73,7 +73,7 @@ main {
 
 .play.stop{
     background-image: url("../svg/pause.png");
-} 
+}
 
 .arrows img {
     height: 100%;
@@ -86,7 +86,7 @@ main {
     font-size: 17px;
 }
 
-.song #autor {
+.song #author {
     color: rgb(193, 255, 6);
     font-size: 20px;
 }
@@ -146,7 +146,7 @@ footer{
 .rsschool,
 .github{
     width: 5rem;
-}  
+}
 
 .image_github{
     width: 3rem;
