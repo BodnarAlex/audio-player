@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: url(../img/lemonade.png) no-repeat;
+    background-size: 100% 100%;
+    backdrop-filter: blur(10px);
+    background-position: center center;
+}
+
+main {
+    height: 400px;
+    width: 330px;
+    box-shadow: 0 0 10px #000000;
+    border-radius: 3%;
+    overflow: hidden;
+}
+
+.container_item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    flex-flow: column nowrap;
+}
+
+.photo {
+    height: 70%;
+}
+
+.controls {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 30%;
+    background: -webkit-linear-gradient(45deg, rgb(40, 40, 40), rgb(133, 133, 133));
+    padding: 15px 30px 5px;
+}
+
+.photo_one {
+    background-image: url("../img/lemonade.png");
+    background-size: 105% 130%;
+    background-position: center center;
+    transition: 1s;
+
+}
+
+.photo_one.scale {
+    background-size: 115% 145%;
+    transition: 1s;
+}
+
+.controls_top {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.play {
+    height: 50px;
+    width: 50px;
+    background-image: url("../svg/play.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    filter: invert(1);
+    cursor: pointer;
+}
+
+.play.stop{
+    background-image: url("../svg/pause.png");
+}
+
+.arrows img {
+    height: 100%;
+    width: 100%;
+    filter: invert(1);
+}
+
+.song {
+    color: white;
+    font-size: 17px;
+}
+
+.song #author {
+    color: rgb(193, 255, 6);
+    font-size: 20px;
+}
+
+.arrows {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.arrows div {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.audio {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    font-size: 13px;
+    display: flex;
+    flex-flow: column-reverse;
+    gap: 2px;
+}
+
+.audio #end_song {
+    color: rgb(193, 255, 6);
+    align-self: end;
+}
+
+#progress {
+    appearance: none;
+    background-color: black;
+    width: 100%;
+    height: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+input::-webkit-slider-thumb {
+    background-color: rgb(193, 255, 6);
+    appearance: none;
+    width: 8px;
+    height: 12px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+footer{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    width: 100%;
+}
+.rsschool,
+.github{
+    width: 5rem;
+}
+
+.image_github{
+    width: 3rem;
+    height: 3rem;
+    background-size: 100% 100%;
+    background-image: url("../svg/github.svg");
+}
+
+.rsschool,
+.image_github{
+    filter: invert(1);
+}
+
+.play:hover,
+.arrows div:hover,
+.rsschool:hover,
+.image_github:hover{
+    opacity: 0.75;
+}
